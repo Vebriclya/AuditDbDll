@@ -66,6 +66,7 @@
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Rename.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplate_CloneTemplate.sql" />
     <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_Add.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_Archive.sql" />
     <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_Edit.sql" />
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Add.sql" />
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Archive.sql" />
