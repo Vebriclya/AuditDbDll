@@ -59,8 +59,13 @@
     <Folder Include="dbo" />
     <Folder Include="dbo\Tables" />
     <Folder Include="Scripts" />
+    <Folder Include="dbo\Stored Procedures\Template\" />
+    <Folder Include="dbo\Stored Procedures\Template\Overall Template\" />
+    <Folder Include="dbo\Stored Procedures\Template\Questions\" />
+    <Folder Include="dbo\Stored Procedures\Template\Sections\" />
   </ItemGroup>
   <ItemGroup>
+    <Build Include="dbo\Stored Procedures\Audits\spAudit_Begin.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Archive.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Clone.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Create.sql" />

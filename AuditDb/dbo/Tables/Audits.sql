@@ -1,8 +1,9 @@
 ﻿CREATE TABLE [dbo].[Audits]
 (
 	AuditId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	TemplateId INT FOREIGN KEY REFERENCES Templates(TemplateId) NOT NULL,
-	AuditDate DATETIME2,
-	AuditType NVARCHAR(50),
-	IsArchived BIT
+	TemplateId INT NOT NULL FOREIGN KEY REFERENCES Templates(TemplateId),
+	AuditDate DATETIME2 NOT NULL,
+	AuditType NVARCHAR(50) NOT NULL,
+    IsCompleted BIT NOT NULL,
+	IsArchived BIT NOT NULL
 )
