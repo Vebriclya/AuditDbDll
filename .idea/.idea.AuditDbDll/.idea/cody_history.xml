@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChatHistory">
+    <accountData>
+      <list>
+        <AccountData>
+          <accountId value="VXNlcjo0NzYyMDI=" />
+          <chats>
+            <list>
+              <chat>
+                <internalId value="24da0dba-cfc0-45ee-9d1e-e0a70efcc3c4" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-sonnet-20240229" />
+                    <provider value="Anthropic" />
+                    <title value="Claude 3 Sonnet" />
+                  </llm>
+                </llm>
+                <messages>
+                  <list>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="Hey cody, could you write me a stored procedure to edit a Template based on Templates.sql?" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                      <text value="Sure, here's a stored procedure to edit a Template based on the provided context:&#10;&#10;```sql&#10;CREATE PROCEDURE [dbo].[spTemplate_Edit]&#10;    @TemplateId INT,&#10;    @TemplateName NVARCHAR(50)&#10;AS&#10;BEGIN&#10;    SET NOCOUNT ON;&#10;    BEGIN TRY&#10;        BEGIN TRANSACTION;&#10;&#10;        UPDATE Templates&#10;        SET TemplateName = @TemplateName&#10;        WHERE TemplateId = @TemplateId;&#10;&#10;        COMMIT TRANSACTION;&#10;    END TRY&#10;    BEGIN CATCH&#10;        ROLLBACK TRANSACTION;&#10;        THROW;&#10;    END CATCH&#10;END&#10;```&#10;&#10;This stored procedure takes two parameters:&#10;&#10;- `@TemplateId`: The ID of the Template to be edited.&#10;- `@TemplateName`: The new name for the Template.&#10;&#10;Here's how it works:&#10;&#10;1. The procedure starts a transaction using `BEGIN TRANSACTION`.&#10;2. It updates the `TemplateName` column in the `Templates` table for the specified `TemplateId`.&#10;3. If the update is successful, the transaction is committed using `COMMIT TRANSACTION`.&#10;4. If an error occurs, the transaction is rolled back using `ROLLBACK TRANSACTION`, and the error is propagated using `THROW`.&#10;&#10;Note that this procedure assumes that the `Templates` table has a `TemplateId` column as the primary key and a `TemplateName` column to store the name of the template." />
+                    </message>
+                  </list>
+                </messages>
+                <updatedAt value="2024-06-25T13:20:44.2403524" />
+              </chat>
+              <chat>
+                <internalId value="2334cf78-1b69-4bfe-a318-7cd694b1db56" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-sonnet-20240229" />
+                    <provider value="Anthropic" />
+                    <title value="Claude 3 Sonnet" />
+                  </llm>
+                </llm>
+                <messages>
+                  <list>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="Could you please write me a stored procedure to edit my Templates?" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                      <text value="Sure, here's an example of a stored procedure that can be used to edit an existing template:&#10;&#10;```sql&#10;CREATE PROCEDURE [dbo].[spTemplate_Edit]&#10;    @TemplateId INT,&#10;    @TemplateName NVARCHAR(50)&#10;AS&#10;BEGIN&#10;    SET NOCOUNT ON;&#10;&#10;    BEGIN TRY&#10;        BEGIN TRANSACTION;&#10;&#10;        -- Update the template name&#10;        UPDATE Templates&#10;        SET TemplateName = @TemplateName&#10;        WHERE TemplateId = @TemplateId;&#10;&#10;        COMMIT TRANSACTION;&#10;    END TRY&#10;    BEGIN CATCH&#10;        ROLLBACK TRANSACTION;&#10;        THROW;&#10;    END CATCH&#10;END&#10;```&#10;&#10;This stored procedure takes two parameters:&#10;&#10;- `@TemplateId`: The ID of the template you want to edit.&#10;- `@TemplateName`: The new name for the template.&#10;&#10;Here's how it works:&#10;&#10;1. It starts a new transaction using `BEGIN TRANSACTION`.&#10;2. It updates the `TemplateName` column in the `Templates` table for the specified `TemplateId`.&#10;3. If the update is successful, it commits the transaction using `COMMIT TRANSACTION`.&#10;4. If an error occurs, it rolls back the transaction using `ROLLBACK TRANSACTION` and throws the error.&#10;&#10;To use this stored procedure, you would call it like this:&#10;&#10;```sql&#10;EXEC [dbo].[spTemplate_Edit] @TemplateId = 1, @TemplateName = 'New Template Name';&#10;```&#10;&#10;This will update the template with the ID of 1 and set its name to 'New Template Name'.&#10;&#10;Note: If you need to update other columns in the `Templates` table or make changes to related tables (e.g., `Sections`, `Questions`), you can modify the stored procedure accordingly." />
+                    </message>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="Should it not also take IsArchived?" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                      <text value="You're right, it would be a good idea to include the `IsArchived` column in the stored procedure as well, in case you want to update the archived status of the template. Here's an updated version of the stored procedure that includes the `IsArchived` parameter:&#10;&#10;```sql&#10;CREATE PROCEDURE [dbo].[spTemplate_Edit]&#10;    @TemplateId INT,&#10;    @TemplateName NVARCHAR(50),&#10;    @IsArchived BIT&#10;AS&#10;BEGIN&#10;    SET NOCOUNT ON;&#10;&#10;    BEGIN TRY&#10;        BEGIN TRANSACTION;&#10;&#10;        -- Update the template name and archived status&#10;        UPDATE Templates&#10;        SET TemplateName = @TemplateName,&#10;            IsArchived = @IsArchived&#10;        WHERE TemplateId = @TemplateId;&#10;&#10;        COMMIT TRANSACTION;&#10;    END TRY&#10;    BEGIN CATCH&#10;        ROLLBACK TRANSACTION;&#10;        THROW;&#10;    END CATCH&#10;END&#10;```&#10;&#10;In this updated version, we've added the `@IsArchived` parameter of type `BIT` (0 for not archived, 1 for archived). The `UPDATE` statement now updates both the `TemplateName` and `IsArchived` columns for the specified `TemplateId`.&#10;&#10;To use this stored procedure, you would call it like this:&#10;&#10;```sql&#10;EXEC [dbo].[spTemplate_Edit] @TemplateId = 1, @TemplateName = 'New Template Name', @IsArchived = 0;&#10;```&#10;&#10;This will update the template with the ID of 1, set its name to 'New Template Name', and mark it as not archived (0).&#10;&#10;By including the `IsArchived` parameter, you can easily update the archived status of a template along with its name in a single stored procedure call." />
+                    </message>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="If I don't want to update the IsArchived status, can I just leave it out of the stored procedure?" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                      <text value="Yes, you can leave out the `@IsArchived` parameter from the stored procedure call if you don't want to update the `IsArchived` status of the template. The stored procedure will then only update the `TemplateName` column and leave the `IsArchived` column unchanged.&#10;&#10;Here's the updated stored procedure with the `@IsArchived` parameter marked as optional:&#10;&#10;```sql&#10;CREATE PROCEDURE [dbo].[spTemplate_Edit]&#10;    @TemplateId INT,&#10;    @TemplateName NVARCHAR(50),&#10;    @IsArchived BIT = NULL&#10;AS&#10;BEGIN&#10;    SET NOCOUNT ON;&#10;&#10;    BEGIN TRY&#10;        BEGIN TRANSACTION;&#10;&#10;        -- Update the template name and archived status (if provided)&#10;        UPDATE Templates&#10;        SET TemplateName = @TemplateName,&#10;            IsArchived = ISNULL(@IsArchived, IsArchived) -- Keep the existing value if @IsArchived is NULL&#10;        WHERE TemplateId = @TemplateId;&#10;&#10;        COMMIT TRANSACTION;&#10;    END TRY&#10;    BEGIN CATCH&#10;        ROLLBACK TRANSACTION;&#10;        THROW;&#10;    END CATCH&#10;END&#10;```&#10;&#10;In this version, the `@IsArchived` parameter is marked as optional by providing a default value of `NULL`. In the `UPDATE` statement, we use the `ISNULL` function to check if `@IsArchived` is `NULL`. If it is `NULL`, we keep the existing value of the `IsArchived` column; otherwise, we update it with the provided value.&#10;&#10;To update only the `TemplateName` without changing the `IsArchived` status, you can call the stored procedure like this:&#10;&#10;```sql&#10;EXEC [dbo].[spTemplate_Edit] @TemplateId = 1, @TemplateName = 'New Template Name';&#10;```&#10;&#10;Since the `@IsArchived` parameter is not provided, it will be treated as `NULL`, and the `IsArchived` column will not be updated.&#10;&#10;If you want to update both the `TemplateName` and `IsArchived` status, you can call the stored procedure with all three parameters:&#10;&#10;```sql&#10;EXEC [dbo].[spTemplate_Edit] @TemplateId = 1, @TemplateName = 'New Template Name', @IsArchived = 0;&#10;```&#10;&#10;This way, you have the flexibility to update either or both columns as needed." />
+                    </message>
+                  </list>
+                </messages>
+                <updatedAt value="2024-06-25T13:54:27.8420812" />
+              </chat>
+            </list>
+          </chats>
+          <defaultLlm>
+            <llm>
+              <model value="anthropic/claude-3-sonnet-20240229" />
+              <provider value="Anthropic" />
+              <title value="Claude 3 Sonnet" />
+            </llm>
+          </defaultLlm>
+        </AccountData>
+      </list>
+    </accountData>
+  </component>
+</project>
