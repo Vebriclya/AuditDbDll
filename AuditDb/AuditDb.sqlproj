@@ -62,9 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Archive.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Clone.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Create.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Rename.sql" />
-    <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplate_CloneTemplate.sql" />
     <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_Add.sql" />
     <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_Archive.sql" />
     <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_Edit.sql" />
