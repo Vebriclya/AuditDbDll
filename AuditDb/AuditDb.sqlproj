@@ -61,18 +61,18 @@
     <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Stored Procedures\spTemplate_RenameTemplate.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplate_ArchiveTemplate.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplate_CloneTemplate.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplate_Create.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplate_RenameTemplate.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_Add.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Add.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Edit.sql" />
     <Build Include="dbo\Tables\Templates.sql" />
     <Build Include="dbo\Tables\Sections.sql" />
     <Build Include="dbo\Tables\Questions.sql" />
     <Build Include="dbo\Tables\Audits.sql" />
     <Build Include="dbo\Tables\Responses.sql" />
     <Build Include="dbo\Tables\Attachments.sql" />
-    <Build Include="dbo\Stored Procedures\spTemplate_Create.sql" />
-    <Build Include="dbo\Stored Procedures\spTemplate_UpdateName.sql" />
-    <Build Include="dbo\Stored Procedures\spTemplate_ArchiveTemplate.sql" />
-    <Build Include="dbo\Stored Procedures\spTemplate_CloneTemplate.sql" />
-    <Build Include="dbo\Stored Procedures\spTemplate_AddSection.sql" />
-    <Build Include="dbo\Stored Procedures\spTemplate_AddQuestion.sql" />
   </ItemGroup>
 </Project>

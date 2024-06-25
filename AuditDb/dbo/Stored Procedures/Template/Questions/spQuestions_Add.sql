@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[spSection_AddQuestion]
+﻿CREATE PROCEDURE [dbo].[spQuestions_Add]
     @SectionId INT,
     @QuestionText NVARCHAR(255),
     @QuestionInfo NVARCHAR(300),
@@ -13,7 +13,7 @@ BEGIN
 
         INSERT INTO Questions (SectionId, QuestionText, QuestionInfo, OrderInSection, IsArchived)
         VALUES (@SectionId, @QuestionText, @QuestionInfo, @OrderInSection, 0);
-        
+
         SET @NewQuestionID = SCOPE_IDENTITY();
 
         COMMIT TRANSACTION;

@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spTemplate_RenameTemplate]
     @TemplateId INT,
-    @TemplateName NVARCHAR(50),
+    @TemplateName NVARCHAR(50)
 AS
 BEGIN
     SET NOCOUNT ON;

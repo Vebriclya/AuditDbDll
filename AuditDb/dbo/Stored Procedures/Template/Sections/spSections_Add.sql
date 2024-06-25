@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[spSection_Create]
+﻿CREATE PROCEDURE [dbo].[spSections_Add]
     @TemplateId INT,
     @Title NVARCHAR(50),
     @OrderInAudit INT,
@@ -12,7 +12,7 @@ BEGIN
 
         INSERT INTO Sections (TemplateId, Title, OrderInAudit, HasQuestions, IsArchived)
         VALUES (@TemplateId, @Title, @OrderInAudit, @HasQuestions, 0);
-        
+
         SET @NewSectionID = SCOPE_IDENTITY();
 
         COMMIT TRANSACTION;
