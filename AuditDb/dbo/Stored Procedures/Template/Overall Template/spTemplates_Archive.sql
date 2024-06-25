@@ -1,17 +1,14 @@
-﻿CREATE PROCEDURE [dbo].[spTemplate_RenameTemplate]
-    @TemplateId INT,
-    @TemplateName NVARCHAR(50)
+﻿CREATE PROCEDURE [dbo].[spTemplates_Archive]
+    @TemplateId INT
 AS
 BEGIN
     SET NOCOUNT ON;
 
     BEGIN TRY
         BEGIN TRANSACTION;
-
         UPDATE Templates
-        SET TemplateName = @TemplateName
+        SET IsArchived = 1
         WHERE TemplateId = @TemplateId;
-
         COMMIT TRANSACTION;
     END TRY
     BEGIN CATCH
