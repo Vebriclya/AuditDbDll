@@ -18,6 +18,7 @@
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Add.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Edit.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_Add.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_Edit.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplate_ArchiveTemplate.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplate_CloneTemplate.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplate_Create.sql" />

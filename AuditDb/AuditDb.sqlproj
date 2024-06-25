@@ -61,7 +61,7 @@
     <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplate_ArchiveTemplate.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplate_Archive.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplate_CloneTemplate.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplate_Create.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplate_RenameTemplate.sql" />
