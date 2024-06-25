@@ -15,13 +15,13 @@
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Audits.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Responses.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Attachments.sql" />
-              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_Create.sql" />
-              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_UpdateName.sql" />
-              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_ArchiveTemplate.sql" />
-              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_CloneTemplate.sql" />
-              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_AddSection.sql" />
-              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_AddQuestion.sql" />
-              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_EditTemplate.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Add.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Edit.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_Add.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplate_ArchiveTemplate.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplate_CloneTemplate.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplate_Create.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplate_RenameTemplate.sql" />
             </array>
           </option>
           <option name="remarks" value="Database Project" />

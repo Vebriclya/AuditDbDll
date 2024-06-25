@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_AddQuestion.sql" dialect="TSQL" />
-    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_AddSection.sql" dialect="TSQL" />
-    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_ArchiveTemplate.sql" dialect="TSQL" />
-    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_CloneTemplate.sql" dialect="TSQL" />
-    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_Create.sql" dialect="TSQL" />
-    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_RenameTemplate.sql" dialect="TSQL" />
-    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/spTemplate_UpdateName.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplate_ArchiveTemplate.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplate_CloneTemplate.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplate_Create.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplate_RenameTemplate.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_Add.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Add.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Edit.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Attachments.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Audits.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Questions.sql" dialect="TSQL" />
