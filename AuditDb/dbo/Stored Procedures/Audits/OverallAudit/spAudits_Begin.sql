@@ -1,6 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[spAudits_BeginAudit]
+﻿CREATE PROCEDURE [dbo].[spAudits_Begin]
     @TemplateId INT,
-    @AuditDate DATETIME2,
     @AuditType NVARCHAR(50),
     @NewAuditId INT OUTPUT
 AS
@@ -14,18 +13,29 @@ BEGIN
 
         SET @NewAuditId = SCOPE_IDENTITY();
 
-        INSERT INTO Responses(AuditId, QuestionId, SectionId, Score, ResponseText, IsArchived)
-        SELECT @NewAuditId, Questions.QuestionId, Questions.SectionId, 0, '', 0
-        FROM Questions
-                 JOIN Sections ON Questions.SectionId = Sections.SectionId
-        WHERE Sections.TemplateId = @TemplateId;
+-- INSERT Sections into AuditSections
+        INSERT INTO AuditSections(AuditId, Title, OrderInAudit, HasQuestions, IsArchived)
+        SELECT @NewAuditId, s.Title, s.OrderInAudit, s.HasQuestions, 0
+        FROM Sections s
+        WHERE s.TemplateId = @TemplateId
+          AND s.IsArchived = 0;
 
-        INSERT INTO Responses(AuditId, QuestionId, SectionId, Score, ResponseText, IsArchived)
-        SELECT @NewAuditId, NULL, Sections.SectionId, 0, '', 0
-        FROM Sections
-        WHERE Sections.TemplateId = @TemplateId
-          AND Sections.HasQuestions = 0;
+-- INSERT Questions into AuditQuestions
+        INSERT INTO AuditQuestions (AuditSectionId, QuestionText, QuestionInfo, OrderInSection, IsArchived)
+        SELECT ase.SectionId, q.QuestionText, q.QuestionInfo, q.OrderInSection, 0
+        FROM Questions q
+                 JOIN Sections s ON q.SectionId = s.SectionId
+                 JOIN AuditSections ase ON s.SectionId = ase.SectionId
+        WHERE s.TemplateId = @TemplateId
+          AND s.IsArchived = 0
+          AND q.IsArchived = 0;
 
+-- INSERT Dummy Responses
+        INSERT INTO Responses (AuditId, QuestionId, SectionId, Score, ResponseText, IsArchived)
+        SELECT @NewAuditId, aq.QuestionId, asec.SectionId, 0, '', 0
+        FROM AuditSections asec
+                 LEFT JOIN AuditQuestions aq ON asec.SectionId = aq.AuditSectionId
+        WHERE asec.AuditId = @NewAuditId;
         COMMIT TRANSACTION;
     END TRY
     BEGIN CATCH
