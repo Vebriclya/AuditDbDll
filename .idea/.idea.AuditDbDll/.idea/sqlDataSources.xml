@@ -15,6 +15,8 @@
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Audits.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Responses.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Attachments.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Tables/AuditSections.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Tables/AuditQuestions.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Add.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Edit.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Archive.sql" />
@@ -25,7 +27,10 @@
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Create.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Archive.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Clone.sql" />
-              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/spAudit_Begin.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_Begin.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/beginaudit.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_Begin2.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/Scripts/Script.PostDeployment.sql" />
             </array>
           </option>
           <option name="remarks" value="Database Project" />

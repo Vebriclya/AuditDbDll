@@ -2,7 +2,8 @@
 	@QuestionId int,
     @QuestionText nvarchar(255),
     @QuestionInfo nvarchar(300),
-    @OrderInSection int
+    @OrderInSection int,
+    @HasSelectBoxes bit
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -13,7 +14,8 @@ BEGIN
         UPDATE Questions
         SET QuestionText = @QuestionText,
             QuestionInfo = @QuestionInfo,
-            OrderInSection = @OrderInSection
+            OrderInSection = @OrderInSection,
+            HasSelectBoxes = @HasSelectBoxes
         WHERE QuestionId = @QuestionId;
             
         COMMIT TRANSACTION;

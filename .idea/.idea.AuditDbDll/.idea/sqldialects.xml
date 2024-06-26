@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/spAudit_Begin.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/Scripts/Script.PostDeployment.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/beginaudit.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_Begin.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_Begin2.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Archive.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Clone.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Create.sql" dialect="TSQL" />
@@ -13,6 +16,8 @@
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Archive.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Edit.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Attachments.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Tables/AuditQuestions.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Tables/AuditSections.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Audits.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Questions.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Responses.sql" dialect="TSQL" />

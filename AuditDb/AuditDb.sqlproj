@@ -55,17 +55,18 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
+    <Folder Include="dbo\Stored Procedures\Audits\Questions\" />
+    <Folder Include="dbo\Stored Procedures\Audits\Sections\" />
     <Folder Include="Properties" />
-    <Folder Include="dbo" />
-    <Folder Include="dbo\Tables" />
-    <Folder Include="Scripts" />
     <Folder Include="dbo\Stored Procedures\Template\" />
     <Folder Include="dbo\Stored Procedures\Template\Overall Template\" />
     <Folder Include="dbo\Stored Procedures\Template\Questions\" />
     <Folder Include="dbo\Stored Procedures\Template\Sections\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Stored Procedures\Audits\spAudit_Begin.sql" />
+    <Build Include="dbo\Stored Procedures\Audits\OverallAudit\beginaudit.sql" />
+    <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_Begin.sql" />
+    <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_Begin2.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Archive.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Clone.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Create.sql" />
@@ -76,11 +77,17 @@
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Add.sql" />
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Archive.sql" />
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Edit.sql" />
+    <Build Include="dbo\Tables\AuditQuestions.sql" />
+    <Build Include="dbo\Tables\AuditSections.sql" />
     <Build Include="dbo\Tables\Templates.sql" />
     <Build Include="dbo\Tables\Sections.sql" />
     <Build Include="dbo\Tables\Questions.sql" />
     <Build Include="dbo\Tables\Audits.sql" />
     <Build Include="dbo\Tables\Responses.sql" />
     <Build Include="dbo\Tables\Attachments.sql" />
+    <Build Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dbo\Tester" />
   </ItemGroup>
 </Project>

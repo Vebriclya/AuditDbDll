@@ -1,0 +1,182 @@
+﻿-- INIT database
+
+CREATE TABLE Templates (
+    TemplateId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    TemplateName NVARCHAR(50) NOT NULL,
+    IsArchived BIT NOT NULL
+);
+
+CREATE TABLE Sections (
+    SectionId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    TemplateId INT NOT NULL,
+    Title NVARCHAR(50) NOT NULL,
+    OrderInAudit INT NOT NULL,
+    HasQuestions BIT NOT NULL,
+    IsArchived BIT NOT NULL,
+    FOREIGN KEY (TemplateId) REFERENCES Templates(TemplateId)
+);
+
+CREATE TABLE Questions (
+    QuestionId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    SectionId INT NOT NULL,
+    QuestionText NVARCHAR(255) NOT NULL,
+    QuestionInfo NVARCHAR(300),
+    OrderInSection INT NOT NULL,
+    IsArchived BIT NOT NULL,
+    FOREIGN KEY (SectionId) REFERENCES Sections(SectionId)
+);
+
+CREATE TABLE Audits (
+    AuditId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    TemplateId INT NOT NULL,
+    AuditDate DATETIME2 NOT NULL,
+    AuditType NVARCHAR(100) NOT NULL,
+    IsCompleted BIT NOT NULL,
+    IsArchived BIT NOT NULL,
+    FOREIGN KEY (TemplateId) REFERENCES Templates(TemplateId)
+);
+
+CREATE TABLE Responses (
+    ResponseId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    AuditId INT NOT NULL,
+    QuestionId INT NULL,
+    SectionId INT NULL,
+    Score INT NULL,
+    ResponseText NVARCHAR(750) NULL,
+    IsArchived BIT NOT NULL,
+    FOREIGN KEY (AuditId) REFERENCES Audits(AuditId),
+    FOREIGN KEY (QuestionId) REFERENCES Questions(QuestionId),
+    FOREIGN KEY (SectionId) REFERENCES Sections(SectionId)
+);
+
+CREATE TABLE Attachments (
+    AttachmentId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    AuditId INT NOT NULL,
+    QuestionId INT NULL,
+    SectionId INT NULL,
+    AttachmentName NVARCHAR(100) NULL,
+    FileType NVARCHAR(50),
+    FileData VARBINARY(MAX),
+    IsArchived BIT,
+    FOREIGN KEY (AuditId) REFERENCES Audits(AuditId),
+    FOREIGN KEY (QuestionId) REFERENCES Questions(QuestionId),
+    FOREIGN KEY (SectionId) REFERENCES Sections(SectionId)
+);
+
+CREATE TABLE AuditSections (
+    SectionId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    AuditId INT NOT NULL,
+    Title NVARCHAR(50) NOT NULL,
+    OrderInAudit INT NOT NULL,
+    HasQuestions BIT NOT NULL,
+    IsArchived BIT NOT NULL,
+    FOREIGN KEY (AuditId) REFERENCES Audits(AuditId)
+);
+
+CREATE TABLE AuditQuestions (
+    QuestionId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    AuditSectionId INT NOT NULL,
+    QuestionText NVARCHAR(255) NOT NULL,
+    QuestionInfo NVARCHAR(300),
+    OrderInSection INT NOT NULL,
+    IsArchived BIT NOT NULL,
+    FOREIGN KEY (AuditSectionId) REFERENCES AuditSections(SectionId)
+);
+
+-- INSERT Dummy Data
+INSERT INTO Templates (TemplateName, IsArchived) VALUES ('Dummy Template', 0);
+
+INSERT INTO Sections (TemplateId, Title, OrderInAudit, HasQuestions, IsArchived) VALUES
+(1, 'General First Impression - External', 1, 1, 0),
+(1, 'Building Maintenance - External', 2, 1, 0),
+(1, 'First Impressions and Maintenance - Internal', 3, 1, 0),
+(1, 'Health and Safety Requirements', 4, 1, 0),
+(1, 'Home in the Community', 5, 1, 0),
+(1, 'Summary of First Impressions', 6, 0, 0),
+(1, 'Summary of Repairs and Maintenance Issues', 7, 0, 0);
+
+INSERT INTO Questions (SectionId, QuestionText, QuestionInfo, OrderInSection, IsArchived) VALUES
+(1, 'Front Garden', 'e.g; planting, free of rubbish, tidy?', 1, 0),
+(1, 'Back/Side Garden', '', 2, 0),
+(1, 'Bin storage', 'e.g; out of the way, no overspill', 3, 0),
+(1, 'Front Entrance', 'e.g; clean, tidy, welcoming?', 4, 0),
+(1, 'Rear/Side Entrance', '', 5, 0),
+(1, 'Smoking area', 'e.g; ashtrays empty, free of cigarette butts?', 6, 0),
+(2, 'Roof, Gutters and Drains - Front', '', 1, 0),
+(2, 'Roof, Gutters and Drains - Rear/Side', '', 2, 0),
+(2, 'Windows - Front', '', 3, 0),
+(2, 'Windows - Rear/Side', '', 4, 0),
+(2, 'Paintwork - Front', '', 5, 0),
+(2, 'Paintwork - Rear/Side', '', 6, 0),
+(2, 'Brickwork/Render - Front', '', 7, 0),
+(2, 'Brickwork/Render - Rear/Side', '', 8, 0),
+(2, 'Boundary Walls/Fencing - Front', '', 9, 0),
+(2, 'Boundary Walls/Fencing - Side', '', 10, 0),
+(2, 'Boundary Walls/Fencing - Rear', '', 11, 0),
+(2, 'Garden Maintenance - Front', '', 12, 0),
+(2, 'Garden Maintenance - Rear/Side', '', 13, 0),
+(2, 'Outbuildings', '', 14, 0),
+(2, 'SU Feedback', '', 15, 0),
+(2, 'Staff Feedback', '', 16, 0),
+(2, 'Off Road Parking', 'First impression/Access Maintenance issues?', 17, 0),
+(3, 'Hallway - First Impressions', 'Clean, tidy, welcoming?', 1, 0),
+(3, 'Maintenance/Repairs - Hallway', '', 2, 0),
+(3, 'Shared Communal Space - First Impressions', '', 3, 0),
+(3, 'Shared Communal Space - Furnishings', '', 4, 0),
+(3, 'Shared Communal Space - Maintenance/Repairs', '', 5, 0),
+(3, 'Kitchen - First Impressions', '', 6, 0),
+(3, 'Kitchen - Cleanliness of White Goods etc', 'Ovens, extractor fans, fridge etc', 7, 0),
+(3, 'Kitchen - Utilities', '', 8, 0),
+(3, 'Kitchen - Maintenance/Repairs', '', 9, 0),
+(3, 'Communal Bathrooms - First Impressions', '', 10, 0),
+(3, 'Communal Bathrooms - Cleanliness', 'Toilet, shower, extractor fans etc', 11, 0),
+(3, 'Communal Bathrooms - Maintenance/Repairs', '', 12, 0),
+(3, 'Office - First Impressions', '', 13, 0),
+(3, 'Office - Cleanliness', 'Including H&S', 14, 0),
+(3, 'Office - Maintenance/Repairs', '', 15, 0),
+(3, 'Other - First Impressions', 'e.g; Staff sleep-in', 16, 0),
+(3, 'Other - Cleanliness', 'Including H&S', 17, 0),
+(3, 'Other - Maintenance/Repairs', '', 18, 0),
+(3, 'SU Feedback', '', 19, 0),
+(3, 'Staff Feedback', '', 20, 0),
+(4, 'CCTV Cameras Working?', '', 1, 0),
+(4, 'Front/Rear/Side Door Locks/Window Locks', '', 2, 0),
+(4, 'Security Lighting', '', 3, 0),
+(4, 'Fire Doors', '', 4, 0),
+(4, 'Fire Safety Checks', '', 5, 0),
+(4, 'Gas/Electricity Compliance', '', 6, 0),
+(4, 'Water Checks', '', 7, 0),
+(5, 'Location', 'Near amenities, transport, supporting social inclusion?', 1, 0);
+
+-- QUERY database
+DECLARE @TemplateId INT = 1, @NewAuditId INT, @AuditType NVARCHAR(50) = 'Dummy Audit Type';
+
+-- INSERT into Audits and get the new AuditId
+INSERT INTO Audits(TemplateId, AuditDate, AuditType, IsCompleted, IsArchived)
+        VALUES (@TemplateId, GETDATE(), @AuditType, 0, 0);
+        
+        SET @NewAuditId = SCOPE_IDENTITY();
+        
+-- INSERT Sections into AuditSections
+INSERT INTO AuditSections(AuditId, Title, OrderInAudit, HasQuestions, IsArchived)
+        SELECT @NewAuditId, s.Title, s.OrderInAudit, s.HasQuestions, 0
+        FROM Sections s
+        WHERE s.TemplateId = @TemplateId 
+          AND s.IsArchived = 0;
+          
+-- INSERT Questions into AuditQuestions
+        INSERT INTO AuditQuestions (AuditSectionId, QuestionText, QuestionInfo, OrderInSection, IsArchived)
+        SELECT ase.SectionId, q.QuestionText, q.QuestionInfo, q.OrderInSection, 0
+        FROM Questions q
+        JOIN Sections s ON q.SectionId = s.SectionId
+        JOIN AuditSections ase ON s.SectionId = ase.SectionId
+        WHERE s.TemplateId = @TemplateId
+          AND s.IsArchived = 0
+          AND q.IsArchived = 0;
+          
+-- INSERT Dummy Responses
+        INSERT INTO Responses (AuditId, QuestionId, SectionId, Score, ResponseText, IsArchived)
+        SELECT @NewAuditId, aq.QuestionId, asec.SectionId, 0, '', 0
+        FROM AuditSections asec
+        LEFT JOIN AuditQuestions aq ON asec.SectionId = aq.AuditSectionId
+        WHERE asec.AuditId = @NewAuditId;

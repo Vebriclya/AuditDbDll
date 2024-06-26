@@ -3,7 +3,7 @@
     @QuestionText NVARCHAR(255),
     @QuestionInfo NVARCHAR(300),
     @OrderInSection INT,
-    @IsArchived BIT,
+    @HasSelectBoxes BIT,
     @NewQuestionID INT OUTPUT
 AS
 BEGIN
@@ -11,8 +11,8 @@ BEGIN
     BEGIN TRY
         BEGIN TRANSACTION;
 
-        INSERT INTO Questions (SectionId, QuestionText, QuestionInfo, OrderInSection, IsArchived)
-        VALUES (@SectionId, @QuestionText, @QuestionInfo, @OrderInSection, 0);
+        INSERT INTO Questions (SectionId, QuestionText, QuestionInfo, OrderInSection, HasSelectBoxes, IsArchived)
+        VALUES (@SectionId, @QuestionText, @QuestionInfo, @OrderInSection, @HasSelectBoxes, 0);
 
         SET @NewQuestionID = SCOPE_IDENTITY();
 

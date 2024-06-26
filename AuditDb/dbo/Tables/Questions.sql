@@ -4,6 +4,7 @@
 	SectionId INT NOT NULL FOREIGN KEY REFERENCES Sections(SectionId),
 	QuestionText NVARCHAR(255) NOT NULL, 
 	QuestionInfo NVARCHAR(300), 
-	OrderInSection INT NOT NULL, 
+	OrderInSection INT NOT NULL,
+    HasSelectBoxes BIT NOT NULL,  
 	IsArchived BIT NOT NULL
 )
