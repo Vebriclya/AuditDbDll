@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_AddAttachment.sql" />
+    <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_ArchiveAttachment.sql" />
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_Begin.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Archive.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Clone.sql" />

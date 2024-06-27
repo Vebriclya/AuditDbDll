@@ -12,6 +12,7 @@ AS
             INSERT INTO Attachments (AuditId, SectionId, QuestionId, AttachmentName, BlobUrl, IsArchived)
             VALUES (@AuditId, NULL, NULL, @AttachmentName, @BlobUrl, 0);
             
+            SET @AttachmentId = SCOPE_IDENTITY();
             COMMIT TRANSACTION;
         END TRY
         BEGIN CATCH
