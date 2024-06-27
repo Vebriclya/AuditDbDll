@@ -31,8 +31,12 @@
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_AddAttachment.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_ArchiveAttachment.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_EditAttachment.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_ArchiveAudit.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_CompleteAudit.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/Sections/spAuditSections_AddAttachment.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/Sections/spAuditSections_EditResponse.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/Questions/spAuditQuestions_AddAttachment.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/Questions/spAuditQuestions_EditResponse.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/Scripts/Script.PostDeployment.sql" />
             </array>
           </option>

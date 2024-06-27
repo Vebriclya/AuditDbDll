@@ -50,13 +50,12 @@ CREATE TABLE Responses (
 );
 
 CREATE TABLE Attachments (
-    AttachmentId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	AttachmentId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
     AuditId INT NOT NULL,
     QuestionId INT NULL,
     SectionId INT NULL,
     AttachmentName NVARCHAR(100) NULL,
-    FileType NVARCHAR(50),
-    FileData VARBINARY(MAX),
+    BlobUrl NVARCHAR(500) NOT NULL,
     IsArchived BIT,
     FOREIGN KEY (AuditId) REFERENCES Audits(AuditId),
     FOREIGN KEY (QuestionId) REFERENCES Questions(QuestionId),
