@@ -29,6 +29,10 @@
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Clone.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_Begin.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_AddAttachment.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_ArchiveAttachment.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_EditAttachment.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/Sections/spAuditSections_AddAttachment.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/Questions/spAuditQuestions_AddAttachment.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/Scripts/Script.PostDeployment.sql" />
             </array>
           </option>
