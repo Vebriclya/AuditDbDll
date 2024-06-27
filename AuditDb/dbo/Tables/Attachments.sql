@@ -4,8 +4,7 @@
 	AuditId INT FOREIGN KEY REFERENCES Audits(AuditId),
 	QuestionId INT FOREIGN KEY REFERENCES AuditQuestions(QuestionId),
 	SectionId INT FOREIGN KEY REFERENCES AuditSections(SectionId),
-	AttachmentName NVARCHAR(100),
-	FileType NVARCHAR(50),
-	FileData VARBINARY(MAX) NOT NULL,
+	AttachmentName NVARCHAR(255) NOT NULL,
+	BlobUrl NVARCHAR(500) NOT NULL,
 	IsArchived BIT NOT NULL
 )
