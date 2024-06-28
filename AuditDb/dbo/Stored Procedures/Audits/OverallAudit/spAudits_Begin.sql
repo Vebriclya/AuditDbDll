@@ -21,8 +21,8 @@ BEGIN
           AND s.IsArchived = 0;
 
 -- INSERT Questions into AuditQuestions
-        INSERT INTO AuditQuestions (AuditSectionId, QuestionText, QuestionInfo, OrderInSection, IsArchived)
-        SELECT ase.SectionId, q.QuestionText, q.QuestionInfo, q.OrderInSection, 0
+        INSERT INTO AuditQuestions (AuditSectionId, QuestionText, QuestionInfo, OrderInSection, HasSelectBoxes, IsArchived)
+        SELECT ase.SectionId, q.QuestionText, q.QuestionInfo, q.OrderInSection, q.HasSelectBoxes, 0
         FROM Questions q
                  JOIN Sections s ON q.SectionId = s.SectionId
                  JOIN AuditSections ase ON s.SectionId = ase.SectionId

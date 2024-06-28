@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[spAudits_AddAttachment]
+﻿CREATE PROCEDURE [dbo].[spAuditQuestions_AddAttachment]
     @QuestionId INT,
     @AttachmentName NVARCHAR(255),
     @BlobUrl NVARCHAR(500),

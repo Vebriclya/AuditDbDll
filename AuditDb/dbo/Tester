@@ -19,9 +19,10 @@ CREATE TABLE Sections (
 CREATE TABLE Questions (
     QuestionId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
     SectionId INT NOT NULL,
-    QuestionText NVARCHAR(255) NOT NULL,
+    QuestionText NVARCHAR(255),
     QuestionInfo NVARCHAR(300),
     OrderInSection INT NOT NULL,
+    HasSelectBoxes BIT NOT NULL,
     IsArchived BIT NOT NULL,
     FOREIGN KEY (SectionId) REFERENCES Sections(SectionId)
 );
@@ -78,6 +79,7 @@ CREATE TABLE AuditQuestions (
     QuestionText NVARCHAR(255) NOT NULL,
     QuestionInfo NVARCHAR(300),
     OrderInSection INT NOT NULL,
+    HasSelectBoxes BIT NOT NULL,
     IsArchived BIT NOT NULL,
     FOREIGN KEY (AuditSectionId) REFERENCES AuditSections(SectionId)
 );
@@ -94,58 +96,58 @@ INSERT INTO Sections (TemplateId, Title, OrderInAudit, HasQuestions, IsArchived)
 (1, 'Summary of First Impressions', 6, 0, 0),
 (1, 'Summary of Repairs and Maintenance Issues', 7, 0, 0);
 
-INSERT INTO Questions (SectionId, QuestionText, QuestionInfo, OrderInSection, IsArchived) VALUES
-(1, 'Front Garden', 'e.g; planting, free of rubbish, tidy?', 1, 0),
-(1, 'Back/Side Garden', '', 2, 0),
-(1, 'Bin storage', 'e.g; out of the way, no overspill', 3, 0),
-(1, 'Front Entrance', 'e.g; clean, tidy, welcoming?', 4, 0),
-(1, 'Rear/Side Entrance', '', 5, 0),
-(1, 'Smoking area', 'e.g; ashtrays empty, free of cigarette butts?', 6, 0),
-(2, 'Roof, Gutters and Drains - Front', '', 1, 0),
-(2, 'Roof, Gutters and Drains - Rear/Side', '', 2, 0),
-(2, 'Windows - Front', '', 3, 0),
-(2, 'Windows - Rear/Side', '', 4, 0),
-(2, 'Paintwork - Front', '', 5, 0),
-(2, 'Paintwork - Rear/Side', '', 6, 0),
-(2, 'Brickwork/Render - Front', '', 7, 0),
-(2, 'Brickwork/Render - Rear/Side', '', 8, 0),
-(2, 'Boundary Walls/Fencing - Front', '', 9, 0),
-(2, 'Boundary Walls/Fencing - Side', '', 10, 0),
-(2, 'Boundary Walls/Fencing - Rear', '', 11, 0),
-(2, 'Garden Maintenance - Front', '', 12, 0),
-(2, 'Garden Maintenance - Rear/Side', '', 13, 0),
-(2, 'Outbuildings', '', 14, 0),
-(2, 'SU Feedback', '', 15, 0),
-(2, 'Staff Feedback', '', 16, 0),
-(2, 'Off Road Parking', 'First impression/Access Maintenance issues?', 17, 0),
-(3, 'Hallway - First Impressions', 'Clean, tidy, welcoming?', 1, 0),
-(3, 'Maintenance/Repairs - Hallway', '', 2, 0),
-(3, 'Shared Communal Space - First Impressions', '', 3, 0),
-(3, 'Shared Communal Space - Furnishings', '', 4, 0),
-(3, 'Shared Communal Space - Maintenance/Repairs', '', 5, 0),
-(3, 'Kitchen - First Impressions', '', 6, 0),
-(3, 'Kitchen - Cleanliness of White Goods etc', 'Ovens, extractor fans, fridge etc', 7, 0),
-(3, 'Kitchen - Utilities', '', 8, 0),
-(3, 'Kitchen - Maintenance/Repairs', '', 9, 0),
-(3, 'Communal Bathrooms - First Impressions', '', 10, 0),
-(3, 'Communal Bathrooms - Cleanliness', 'Toilet, shower, extractor fans etc', 11, 0),
-(3, 'Communal Bathrooms - Maintenance/Repairs', '', 12, 0),
-(3, 'Office - First Impressions', '', 13, 0),
-(3, 'Office - Cleanliness', 'Including H&S', 14, 0),
-(3, 'Office - Maintenance/Repairs', '', 15, 0),
-(3, 'Other - First Impressions', 'e.g; Staff sleep-in', 16, 0),
-(3, 'Other - Cleanliness', 'Including H&S', 17, 0),
-(3, 'Other - Maintenance/Repairs', '', 18, 0),
-(3, 'SU Feedback', '', 19, 0),
-(3, 'Staff Feedback', '', 20, 0),
-(4, 'CCTV Cameras Working?', '', 1, 0),
-(4, 'Front/Rear/Side Door Locks/Window Locks', '', 2, 0),
-(4, 'Security Lighting', '', 3, 0),
-(4, 'Fire Doors', '', 4, 0),
-(4, 'Fire Safety Checks', '', 5, 0),
-(4, 'Gas/Electricity Compliance', '', 6, 0),
-(4, 'Water Checks', '', 7, 0),
-(5, 'Location', 'Near amenities, transport, supporting social inclusion?', 1, 0);
+INSERT INTO Questions (SectionId, QuestionText, QuestionInfo, OrderInSection, HasSelectBoxes, IsArchived) VALUES
+(1, 'Front Garden', 'e.g; planting, free of rubbish, tidy?', 1, 1, 0),
+(1, 'Back/Side Garden', '', 2, 1, 0),
+(1, 'Bin storage', 'e.g; out of the way, no overspill', 3, 1, 0),
+(1, 'Front Entrance', 'e.g; clean, tidy, welcoming?', 4, 1, 0),
+(1, 'Rear/Side Entrance', '', 5, 1, 0),
+(1, 'Smoking area', 'e.g; ashtrays empty, free of cigarette butts?', 6, 1, 0),
+(2, 'Roof, Gutters and Drains - Front', '', 1, 1, 0),
+(2, 'Roof, Gutters and Drains - Rear/Side', '', 2, 1, 0),
+(2, 'Windows - Front', '', 3, 1, 0),
+(2, 'Windows - Rear/Side', '', 4, 1, 0),
+(2, 'Paintwork - Front', '', 5, 1, 0),
+(2, 'Paintwork - Rear/Side', '', 6, 1, 0),
+(2, 'Brickwork/Render - Front', '', 7, 1, 0),
+(2, 'Brickwork/Render - Rear/Side', '', 8, 1, 0),
+(2, 'Boundary Walls/Fencing - Front', '', 9, 1, 0),
+(2, 'Boundary Walls/Fencing - Side', '', 10, 1, 0),
+(2, 'Boundary Walls/Fencing - Rear', '', 11, 1, 0),
+(2, 'Garden Maintenance - Front', '', 12, 1, 0),
+(2, 'Garden Maintenance - Rear/Side', '', 13, 1, 0),
+(2, 'Outbuildings', '', 14, 1, 0),
+(2, 'SU Feedback', '', 15, 1, 0),
+(2, 'Staff Feedback', '', 16, 1, 0),
+(2, 'Off Road Parking', 'First impression/Access Maintenance issues?', 17, 1, 0),
+(3, 'Hallway - First Impressions', 'Clean, tidy, welcoming?', 1, 1, 0),
+(3, 'Maintenance/Repairs - Hallway', '', 2, 1, 0),
+(3, 'Shared Communal Space - First Impressions', '', 3, 1, 0),
+(3, 'Shared Communal Space - Furnishings', '', 4, 1, 0),
+(3, 'Shared Communal Space - Maintenance/Repairs', '', 5, 1, 0),
+(3, 'Kitchen - First Impressions', '', 6, 1, 0),
+(3, 'Kitchen - Cleanliness of White Goods etc', 'Ovens, extractor fans, fridge etc', 7, 1, 0),
+(3, 'Kitchen - Utilities', '', 8, 1, 0),
+(3, 'Kitchen - Maintenance/Repairs', '', 9, 1, 0),
+(3, 'Communal Bathrooms - First Impressions', '', 10, 1, 0),
+(3, 'Communal Bathrooms - Cleanliness', 'Toilet, shower, extractor fans etc', 11, 1, 0),
+(3, 'Communal Bathrooms - Maintenance/Repairs', '', 12, 1, 0),
+(3, 'Office - First Impressions', '', 13, 1, 0),
+(3, 'Office - Cleanliness', 'Including H&S', 14, 1, 0),
+(3, 'Office - Maintenance/Repairs', '', 15, 1, 0),
+(3, 'Other - First Impressions', 'e.g; Staff sleep-in', 16, 1, 0),
+(3, 'Other - Cleanliness', 'Including H&S', 17, 1, 0),
+(3, 'Other - Maintenance/Repairs', '', 18, 1, 0),
+(3, 'SU Feedback', '', 19, 1, 0),
+(3, 'Staff Feedback', '', 20, 1, 0),
+(4, 'CCTV Cameras Working?', '', 1, 1, 0),
+(4, 'Front/Rear/Side Door Locks/Window Locks', '', 2, 1, 0),
+(4, 'Security Lighting', '', 3, 1, 0),
+(4, 'Fire Doors', '', 4, 1, 0),
+(4, 'Fire Safety Checks', '', 5, 1, 0),
+(4, 'Gas/Electricity Compliance', '', 6, 1, 0),
+(4, 'Water Checks', '', 7, 1, 0),
+(5, 'Location', 'Near amenities, transport, supporting social inclusion?', 1, 1, 0);
 
 -- QUERY database
 DECLARE @TemplateId INT = 1, @NewAuditId INT, @AuditType NVARCHAR(50) = 'Dummy Audit Type';
@@ -164,8 +166,8 @@ INSERT INTO AuditSections(AuditId, Title, OrderInAudit, HasQuestions, IsArchived
           AND s.IsArchived = 0;
           
 -- INSERT Questions into AuditQuestions
-        INSERT INTO AuditQuestions (AuditSectionId, QuestionText, QuestionInfo, OrderInSection, IsArchived)
-        SELECT ase.SectionId, q.QuestionText, q.QuestionInfo, q.OrderInSection, 0
+        INSERT INTO AuditQuestions (AuditSectionId, QuestionText, QuestionInfo, OrderInSection, HasSelectBoxes, IsArchived)
+        SELECT ase.SectionId, q.QuestionText, q.QuestionInfo, q.OrderInSection, q.HasSelectBoxes, 0
         FROM Questions q
         JOIN Sections s ON q.SectionId = s.SectionId
         JOIN AuditSections ase ON s.SectionId = ase.SectionId

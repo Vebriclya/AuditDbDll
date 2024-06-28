@@ -18,8 +18,8 @@ BEGIN
         FROM Sections
         WHERE TemplateId = @ExistingTemplateId;
         
-        INSERT INTO Questions (SectionId, QuestionText, QuestionInfo, OrderInSection, IsArchived)
-        SELECT s.SectionId, q.QuestionText, q.QuestionInfo, q.OrderInSection, 0
+        INSERT INTO Questions (SectionId, QuestionText, QuestionInfo, OrderInSection, HasSelectBoxes, IsArchived)
+        SELECT s.SectionId, q.QuestionText, q.QuestionInfo, q.OrderInSection, q.HasSelectBoxes, 0
         FROM Questions q
         INNER JOIN Sections s ON q.SectionId = s.SectionId
         WHERE s.TemplateId = @ExistingTemplateId;
