@@ -58,7 +58,6 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\Stored Procedures\Template\" />
     <Folder Include="dbo\Stored Procedures\Template\Questions\" />
-    <Folder Include="dbo\Stored Procedures\Template\Sections\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_AddAttachment.sql" />
@@ -82,6 +81,7 @@
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Add.sql" />
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Archive.sql" />
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Edit.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Sections\spSections_GetByTemplateId.sql" />
     <Build Include="dbo\Tables\AuditQuestions.sql" />
     <Build Include="dbo\Tables\AuditSections.sql" />
     <Build Include="dbo\Tables\Templates.sql" />
