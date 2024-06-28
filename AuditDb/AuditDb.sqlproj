@@ -73,7 +73,7 @@
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Archive.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Clone.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Create.sql" />
-    <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_GetByIdUnarchived.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_GetById.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Rename.sql" />
     <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_Add.sql" />
     <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_Archive.sql" />
@@ -81,6 +81,7 @@
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Add.sql" />
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Archive.sql" />
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Edit.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Sections\spSections_GetById.sql" />
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_GetByTemplateId.sql" />
     <Build Include="dbo\Tables\AuditQuestions.sql" />
     <Build Include="dbo\Tables\AuditSections.sql" />

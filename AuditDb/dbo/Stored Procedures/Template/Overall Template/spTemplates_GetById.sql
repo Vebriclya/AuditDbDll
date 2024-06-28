@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[spTemplates_GetByIdUnarchived]
+﻿CREATE PROCEDURE [dbo].[spTemplates_GetById]
     @TemplateId INT
 AS
 BEGIN 
