@@ -52,7 +52,7 @@ CREATE TABLE Responses (
 
 CREATE TABLE Attachments (
 	AttachmentId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-    AuditId INT NOT NULL,
+    AuditId INT NULL,
     QuestionId INT NULL,
     SectionId INT NULL,
     AttachmentName NVARCHAR(100) NULL,
@@ -181,3 +181,20 @@ INSERT INTO AuditSections(AuditId, Title, OrderInAudit, HasQuestions, IsArchived
         FROM AuditSections asec
         LEFT JOIN AuditQuestions aq ON asec.SectionId = aq.AuditSectionId
         WHERE asec.AuditId = @NewAuditId;
+        
+-- Insert dummy attachments for the audit
+INSERT INTO Attachments (AuditId, SectionId, QuestionId, AttachmentName, BlobUrl, IsArchived)
+VALUES (1, NULL, NULL, 'Audit Overview.pdf', 'https://example.com/audit1/overview.pdf', 0),
+       (1, NULL, NULL, 'Audit Checklist.xlsx', 'https://example.com/audit1/checklist.xlsx', 0);
+
+-- Insert dummy attachments for a section without questions (assuming SectionId 1 belongs to AuditId 1)
+INSERT INTO Attachments (AuditId, SectionId, QuestionId, AttachmentName, BlobUrl, IsArchived)
+VALUES (NULL, 6, NULL, 'Section6 Guidelines.docx', 'https://example.com/audit1/section1/guidelines.docx', 0),
+       (NULL, 6, NULL, 'Section6 Flowchart.png', 'https://example.com/audit1/section1/flowchart.png', 0);
+
+-- Insert dummy attachments for questions (assuming QuestionId 1, 2, and 3 belong to AuditId 1)
+INSERT INTO Attachments (AuditId, SectionId, QuestionId, AttachmentName, BlobUrl, IsArchived)
+VALUES (NULL, NULL, 1, 'Question1 Image.jpg', 'https://example.com/audit1/question1/image.jpg', 0),
+       (NULL, NULL, 1, 'Question1 Reference.pdf', 'https://example.com/audit1/question1/reference.pdf', 0),
+       (NULL, NULL, 2, 'Question2 Diagram.png', 'https://example.com/audit1/question2/diagram.png', 0),
+       (NULL, NULL, 3, 'Question3 Data.csv', 'https://example.com/audit1/question3/data.csv', 0);
