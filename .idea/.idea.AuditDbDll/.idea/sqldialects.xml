@@ -15,13 +15,17 @@
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Archive.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Clone.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Create.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_GetById.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Rename.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_Add.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_Archive.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_Edit.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_GetBySection.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Add.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Archive.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Edit.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_GetById.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_GetByTemplateId.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Tables/Attachments.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Tables/AuditQuestions.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Tables/AuditSections.sql" dialect="TSQL" />

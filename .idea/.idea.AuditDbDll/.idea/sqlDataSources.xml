@@ -20,13 +20,17 @@
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Add.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Edit.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Archive.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_GetByTemplateId.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_GetById.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_Add.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_Edit.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_Archive.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_GetBySection.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Rename.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Create.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Archive.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Clone.sql" />
+              <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_GetById.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_Begin.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_AddAttachment.sql" />
               <option value="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_ArchiveAttachment.sql" />
