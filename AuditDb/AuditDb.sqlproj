@@ -65,6 +65,9 @@
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_Begin.sql" />
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_CompleteAudit.sql" />
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_EditAttachment.sql" />
+    <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetAllAudits.sql" />
+    <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetAllCompleteAudits.sql" />
+    <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetAllIncompleteAudits.sql" />
     <Build Include="dbo\Stored Procedures\Audits\Questions\spAuditQuestions_AddAttachment.sql" />
     <Build Include="dbo\Stored Procedures\Audits\Questions\spAuditQuestions_EditResponse.sql" />
     <Build Include="dbo\Stored Procedures\Audits\Sections\spAuditSections_AddAttachment.sql" />
@@ -72,6 +75,7 @@
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Archive.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Clone.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Create.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_GetAllTemplates.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_GetById.sql" />
     <Build Include="dbo\Stored Procedures\Template\Overall Template\spTemplates_Rename.sql" />
     <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_Add.sql" />
