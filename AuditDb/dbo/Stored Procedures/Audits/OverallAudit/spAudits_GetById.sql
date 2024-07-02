@@ -61,6 +61,7 @@ BEGIN
     FROM Responses r
     WHERE r.AuditId = @AuditId
       AND r.SectionId IS NOT NULL
+      AND r.QuestionId IS NULL
       AND r.IsArchived = 0;
     
     -- Get Question Responses
@@ -86,8 +87,6 @@ BEGIN
            att.IsArchived
     FROM Attachments att
     WHERE att.AuditId = @AuditId
-      AND att.SectionId IS NULL
-      AND att.QuestionId IS NULL
       AND att.IsArchived = 0;
     
     -- Get Section Attachments
@@ -100,7 +99,6 @@ BEGIN
            att.IsArchived
     FROM Attachments att
     WHERE att.SectionId IN (SELECT SectionId FROM AuditSections WHERE AuditId = @AuditId)
-      AND att.QuestionId IS NULL
       AND att.IsArchived = 0;
     
     -- Get Question Attachments
