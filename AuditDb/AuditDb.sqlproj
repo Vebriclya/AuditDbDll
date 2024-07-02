@@ -77,6 +77,7 @@
     <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_Add.sql" />
     <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_Archive.sql" />
     <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_Edit.sql" />
+    <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_GetById.sql" />
     <Build Include="dbo\Stored Procedures\Template\Questions\spQuestions_GetBySection.sql" />
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Add.sql" />
     <Build Include="dbo\Stored Procedures\Template\Sections\spSections_Archive.sql" />
