@@ -68,6 +68,7 @@
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetAllAudits.sql" />
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetAllCompleteAudits.sql" />
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetAllIncompleteAudits.sql" />
+    <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetAllQuestions.sql" />
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetAllSections.sql" />
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetById.sql" />
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetSectionById.sql" />

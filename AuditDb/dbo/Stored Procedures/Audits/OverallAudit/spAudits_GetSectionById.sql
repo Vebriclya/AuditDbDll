@@ -2,6 +2,8 @@
     @SectionId INT
 AS
 BEGIN
+    SET NOCOUNT ON;
+    
     SELECT a.SectionId, 
            a.AuditId, 
            a.Title, 
@@ -10,4 +12,5 @@ BEGIN
            a.IsArchived
     FROM AuditSections a
     WHERE a.SectionId = @SectionId
+    AND a.IsArchived = 0;
 END
