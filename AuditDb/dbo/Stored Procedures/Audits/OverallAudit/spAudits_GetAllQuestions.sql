@@ -12,7 +12,7 @@ BEGIN
            q.HasSelectBoxes, 
            q.IsArchived
     FROM AuditQuestions q
-    INNER JOIN AuditSections s on q.AuditSectionId = s.SectionId
+    INNER JOIN AuditSections s ON q.AuditSectionId = s.SectionId
     WHERE s.AuditId = @AuditId
       AND s.IsArchived = 0
 END

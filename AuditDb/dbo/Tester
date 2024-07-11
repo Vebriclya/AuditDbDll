@@ -94,7 +94,8 @@ INSERT INTO Sections (TemplateId, Title, OrderInAudit, HasQuestions, IsArchived)
 (1, 'Health and Safety Requirements', 4, 1, 0),
 (1, 'Home in the Community', 5, 1, 0),
 (1, 'Summary of First Impressions', 6, 0, 0),
-(1, 'Summary of Repairs and Maintenance Issues', 7, 0, 0);
+(1, 'Summary of Repairs and Maintenance Issues', 7, 0, 0),
+(1, 'Archived section', 8, 0, 1);
 
 INSERT INTO Questions (SectionId, QuestionText, QuestionInfo, OrderInSection, HasSelectBoxes, IsArchived) VALUES
 (1, 'Front Garden', 'e.g; planting, free of rubbish, tidy?', 1, 1, 0),
@@ -106,6 +107,7 @@ INSERT INTO Questions (SectionId, QuestionText, QuestionInfo, OrderInSection, Ha
 (2, 'Roof, Gutters and Drains - Front', '', 1, 1, 0),
 (2, 'Roof, Gutters and Drains - Rear/Side', '', 2, 1, 0),
 (2, 'Windows - Front', '', 3, 1, 0),
+(2, 'WINDOWS ARCHIVED', '', 4, 1, 1),
 (2, 'Windows - Rear/Side', '', 4, 1, 0),
 (2, 'Paintwork - Front', '', 5, 1, 0),
 (2, 'Paintwork - Rear/Side', '', 6, 1, 0),
@@ -117,6 +119,7 @@ INSERT INTO Questions (SectionId, QuestionText, QuestionInfo, OrderInSection, Ha
 (2, 'Garden Maintenance - Front', '', 12, 1, 0),
 (2, 'Garden Maintenance - Rear/Side', '', 13, 1, 0),
 (2, 'Outbuildings', '', 14, 1, 0),
+(2, 'Garden Maintenance ARCHIVED', '', 15, 1, 1),
 (2, 'SU Feedback', '', 15, 1, 0),
 (2, 'Staff Feedback', '', 16, 1, 0),
 (2, 'Off Road Parking', 'First impression/Access Maintenance issues?', 17, 1, 0),
@@ -132,6 +135,7 @@ INSERT INTO Questions (SectionId, QuestionText, QuestionInfo, OrderInSection, Ha
 (3, 'Communal Bathrooms - First Impressions', '', 10, 1, 0),
 (3, 'Communal Bathrooms - Cleanliness', 'Toilet, shower, extractor fans etc', 11, 1, 0),
 (3, 'Communal Bathrooms - Maintenance/Repairs', '', 12, 1, 0),
+(3, 'ARCHIVED', '', 13, 1, 0),
 (3, 'Office - First Impressions', '', 13, 1, 0),
 (3, 'Office - Cleanliness', 'Including H&S', 14, 1, 0),
 (3, 'Office - Maintenance/Repairs', '', 15, 1, 0),
@@ -185,11 +189,13 @@ INSERT INTO AuditSections(AuditId, Title, OrderInAudit, HasQuestions, IsArchived
 -- Insert dummy attachments for the audit
 INSERT INTO Attachments (AuditId, SectionId, QuestionId, AttachmentName, BlobUrl, IsArchived)
 VALUES (1, NULL, NULL, 'Audit Overview.pdf', 'https://example.com/audit1/overview.pdf', 0),
+       (1, NULL, NULL, 'Archived Attachment.pdf', 'https://archive.io', 1),
        (1, NULL, NULL, 'Audit Checklist.xlsx', 'https://example.com/audit1/checklist.xlsx', 0);
 
 -- Insert dummy attachments for a section without questions (assuming SectionId 1 belongs to AuditId 1)
 INSERT INTO Attachments (AuditId, SectionId, QuestionId, AttachmentName, BlobUrl, IsArchived)
 VALUES (NULL, 6, NULL, 'Section6 Guidelines.docx', 'https://example.com/audit1/section1/guidelines.docx', 0),
+       (NULL, 6, NULL, 'Archived checklist', 'https://example.com/audit1/section1/checklist.xlsx', 1),
        (NULL, 6, NULL, 'Section6 Flowchart.png', 'https://example.com/audit1/section1/flowchart.png', 0);
 
 -- Insert dummy attachments for questions (assuming QuestionId 1, 2, and 3 belong to AuditId 1)
@@ -197,4 +203,5 @@ INSERT INTO Attachments (AuditId, SectionId, QuestionId, AttachmentName, BlobUrl
 VALUES (NULL, NULL, 1, 'Question1 Image.jpg', 'https://example.com/audit1/question1/image.jpg', 0),
        (NULL, NULL, 1, 'Question1 Reference.pdf', 'https://example.com/audit1/question1/reference.pdf', 0),
        (NULL, NULL, 2, 'Question2 Diagram.png', 'https://example.com/audit1/question2/diagram.png', 0),
+       (NULL, NULL, 2, 'Archived Image', 'https://example.com/audit1/question2/reference.jpeg', 1),
        (NULL, NULL, 3, 'Question3 Data.csv', 'https://example.com/audit1/question3/data.csv', 0);
