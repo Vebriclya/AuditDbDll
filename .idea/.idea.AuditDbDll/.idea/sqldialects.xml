@@ -8,6 +8,10 @@
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_Begin.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_CompleteAudit.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_EditAttachment.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_GetAllAudits.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_GetAllCompleteAudits.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_GetAllIncompleteAudits.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/OverallAudit/spAudits_GetById.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/Questions/spAuditQuestions_AddAttachment.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/Questions/spAuditQuestions_EditResponse.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Audits/Sections/spAuditSections_AddAttachment.sql" dialect="TSQL" />
@@ -15,12 +19,15 @@
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Archive.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Clone.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Create.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_GetAllTemplates.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_GetById.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Overall Template/spTemplates_Rename.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_Add.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_Archive.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_Edit.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_GetById.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_GetBySection.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Questions/spQuestions_GetByTemplate.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Add.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Archive.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/AuditDb/dbo/Stored Procedures/Template/Sections/spSections_Edit.sql" dialect="TSQL" />
