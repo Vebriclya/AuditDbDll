@@ -73,6 +73,7 @@
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetAttachments.sql" />
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetById.sql" />
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetQuestionById.sql" />
+    <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetSectionAttachments.sql" />
     <Build Include="dbo\Stored Procedures\Audits\OverallAudit\spAudits_GetSectionById.sql" />
     <Build Include="dbo\Stored Procedures\Audits\Questions\spAuditQuestions_AddAttachment.sql" />
     <Build Include="dbo\Stored Procedures\Audits\Questions\spAuditQuestions_EditResponse.sql" />
